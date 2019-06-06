@@ -7,6 +7,8 @@ find_package(wxWidgets COMPONENTS core base REQUIRED)
 include(${wxWidgets_USE_FILE})
 
 #add_executable(${PROJECT_NAME} ${SRC_LIST})
-add_executable(${PROJECT_NAME} GUI.cpp GUIframe.cpp main.cpp)
+include_directories(include)
+file(GLOB SOURCES "sources/*.cpp" *.cpp)
+add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
 target_link_libraries(${PROJECT_NAME} ${wxWidgets_LIBRARIES})
 

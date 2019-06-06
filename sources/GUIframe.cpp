@@ -111,7 +111,7 @@ void GUIframe::onQuit (wxCommandEvent &event)
 
 void GUIframe::onAbout (wxCommandEvent &event)
 {
-	wxLaunchDefaultApplication ("DOC/About.pdf");
+	wxLaunchDefaultApplication ("../docs/About.pdf");
 }
 
 
@@ -140,8 +140,8 @@ void GUIframe::onUpdate (wxUpdateUIEvent &event)
 
 void GUIframe::onClose (wxCloseEvent &event)
 {
-//	if (wxMessageDialog (NULL, "Are you sure you want to exit?", "Confirm exit", wxOK | wxCANCEL).ShowModal () ==
-//		wxID_OK)
+	if (wxMessageDialog (NULL, "Are you sure you want to exit?", "Confirm exit", wxOK | wxCANCEL).ShowModal () ==
+		wxID_OK)
 	Destroy ();
 }
 
